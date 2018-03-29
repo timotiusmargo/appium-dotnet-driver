@@ -71,6 +71,8 @@
     <Compile Include="Appium\Enums\MobileCapabilityType.cs" />
     <Compile Include="Appium\Android\Enums\ConnectionType.cs" />
     <Compile Include="Appium\Enums\MobileSelector.cs" />
+    <Compile Include="Appium\Interactions\InteractionInfo.cs" />
+    <Compile Include="Appium\Interactions\PointerInputDevice.cs" />
     <Compile Include="Appium\Interfaces\IFindsByIosNSPredicate.cs" />
     <Compile Include="Appium\Interfaces\IExecuteMethod.cs" />
     <Compile Include="Appium\Interfaces\IFindsByFluentSelector.cs" />
