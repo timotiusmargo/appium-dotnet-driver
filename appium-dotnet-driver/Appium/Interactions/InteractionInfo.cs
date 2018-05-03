@@ -12,7 +12,6 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
 using System.Collections.Generic;
 
 namespace OpenQA.Selenium.Appium.Interactions
@@ -35,51 +34,22 @@ namespace OpenQA.Selenium.Appium.Interactions
     public class PenInfo : IInteractionInfo
     {
         /// <summary>
-        /// Specifies pen buttons that can be pressed on pen interactions.
+        /// The normalized pressure of the pointer input in the range of [0,1]
         /// </summary>
-        [Flags]
-        public enum PenButton
-        {
-            Uninitialized = -1,
-
-            /// <summary>
-            /// No button is pressed
-            /// </summary>
-            None = 0,
-
-            /// <summary>
-            /// The barrel/right click button
-            /// </summary>
-            Barrel = 2,
-
-            /// <summary>
-            /// The eraser/top button
-            /// </summary>
-            Eraser = 32
-        }
+        public float? Pressure { get; set; }
 
         /// <summary>
-        /// Gets or sets which pen button(s) that is/are pressed. E.g. PenButton.Barrel | PenButton.Eraser
+        /// The clockwise rotation (in degrees, in the range of [0,359]) of a transducer (e.g. pen stylus) around its own major axis
         /// </summary>
-        public PenButton PenButtons = PenButton.Uninitialized;
+        public int? Twist { get; set; }
 
         /// <summary>
-        /// Gets or sets the force exerted by the pen device
-        /// </summary>
-        public double? Pressure { get; set; }
-
-        /// <summary>
-        /// Gets or sets the clockwise rotation or twist of the pen device
-        /// </summary>
-        public double? Rotation { get; set; }
-
-        /// <summary>
-        /// Gets or sets the angle of tilt of the pen device along the x-axis
+        /// The plane angle (in degrees, in the range of [-90,90]) between the Y-Z plane and the plane containing both the transducer (e.g. pen stylus) axis and the Y axis
         /// </summary>
         public int? TiltX { get; set; }
 
         /// <summary>
-        /// Gets or sets the angle of tilt of the pen device along the y-axis
+        /// The plane angle (in degrees, in the range of [-90,90]) between the X-Z plane and the plane containing both the transducer (e.g. pen stylus) axis and the X axis
         /// </summary>
         public int? TiltY { get; set; }
 
@@ -91,25 +61,21 @@ namespace OpenQA.Selenium.Appium.Interactions
         {
             Dictionary<string, object> toReturn = new Dictionary<string, object>();
 
-            if (PenButtons != PenButton.Uninitialized)
-            {
-                toReturn["buttons"] = PenButtons;
-            }
             if (Pressure.HasValue)
             {
                 toReturn["pressure"] = Pressure;
             }
-            if (Rotation.HasValue)
+            if (Twist.HasValue)
             {
-                toReturn["rotation"] = Rotation;
+                toReturn["twist"] = Twist;
             }
             if (TiltX.HasValue)
             {
-                toReturn["tiltX "] = TiltX;
+                toReturn["tiltX"] = TiltX;
             }
             if (TiltY.HasValue)
             {
-                toReturn["tiltY "] = TiltY;
+                toReturn["tiltY"] = TiltY;
             }
 
             return toReturn;
@@ -122,25 +88,24 @@ namespace OpenQA.Selenium.Appium.Interactions
     public class TouchInfo : IInteractionInfo
     {
         /// <summary>
-        /// Gets or sets the force exerted by the touch contact on the surface
+        /// The normalized pressure of the pointer input in the range of [0,1]
         /// </summary>
-        public double? Pressure { get; set; }
+        public float? Pressure { get; set; }
 
         /// <summary>
-        /// Gets or sets the counter-clockwise angle of rotation around the major axis of the pointer
-        /// device (the z-axis, perpendicular to the surface of the digitizer).
+        /// The clockwise rotation (in degrees, in the range of [0,359]) of a transducer (e.g. pen stylus) around its own major axis
         /// </summary>
-        public int? Orientation { get; set; }
+        public int? Twist { get; set; }
 
         /// <summary>
-        /// Gets or sets the width of the bounding box centered in the touch contact area
+        /// The width (magnitude on the X axis), in pixels of the contact geometry of the pointer
         /// </summary>
-        public int? Width { get; set; }
+        public double? Width { get; set; }
 
         /// <summary>
-        /// Gets or sets the height of the bounding box centered in the touch contact area
+        /// The height (magnitude on the Y axis), in pixels of the contact geometry of the pointer
         /// </summary>
-        public int? Height { get; set; }
+        public double? Height { get; set; }
 
         /// <summary>
         /// Returns optional values that are set to extend the default touch pointer interaction values.
@@ -154,17 +119,17 @@ namespace OpenQA.Selenium.Appium.Interactions
             {
                 toReturn["pressure"] = Pressure;
             }
-            if (Orientation.HasValue)
+            if (Twist.HasValue)
             {
-                toReturn["orientation"] = Orientation;
+                toReturn["twist"] = Twist;
             }
             if (Width.HasValue)
             {
-                toReturn["width "] = Width;
+                toReturn["width"] = Width;
             }
             if (Height.HasValue)
             {
-                toReturn["height "] = Height;
+                toReturn["height"] = Height;
             }
 
             return toReturn;

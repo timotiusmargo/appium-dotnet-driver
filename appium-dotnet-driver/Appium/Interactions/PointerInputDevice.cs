@@ -25,7 +25,7 @@ namespace OpenQA.Selenium.Appium.Interactions
     public enum PointerButton
     {
         /// <summary>
-        /// No pointer button is specified
+        /// Neither buttons nor touch/pen contact changed since last event
         /// </summary>
         None = -1,
 
@@ -42,7 +42,7 @@ namespace OpenQA.Selenium.Appium.Interactions
         /// <summary>
         /// The pen tip
         /// </summary>
-        PenFrontTip = 0,
+        PenContact = 0,
 
         /// <summary>
         /// Mouse middle button
@@ -50,14 +50,29 @@ namespace OpenQA.Selenium.Appium.Interactions
         MiddleMouse = 1,
 
         /// <summary>
-        /// The pen tail end where the eraser/top button is
-        /// </summary>
-        PenBackTip = 1,
-
-        /// <summary>
         /// Mouse right button
         /// </summary>
-        RightMouse = 2
+        RightMouse = 2,
+
+        /// <summary>
+        /// Pen barrel button
+        /// </summary>
+        PenBarrel = 2,
+
+        /// <summary>
+        /// Mouse X1 (back) button
+        /// </summary>
+        X1Mouse = 3,
+
+        /// <summary>
+        /// Mouse X1 (forward) button
+        /// </summary>
+        X2Mouse = 4,
+
+        /// <summary>
+        /// The pen eraser button
+        /// </summary>
+        PenEraser = 5
     }
 
     /// <summary>
