@@ -5,6 +5,6 @@
 -->
 <SignConfigXML>
   <job platform="AnyCPU" configuration="Release" dest="$(TFS_OUTPUTDIRECTORY)\..\..\..\s\Signed" certSubject="NuGet" jobname="WinAppDriver Preview Appium WebDriver NugetSigning">
-    <file src="__RELBINPATH__\..\..\..\a\WinAppDriver.Preview.Appium.WebDriver.*.nupkg" signType="CP-401405" />
+    <file src="__RELBINPATH__\..\..\..\a\Microsoft.WinAppDriver.Appium.WebDriver.*.nupkg" signType="CP-401405" />
   </job>
 </SignConfigXML>

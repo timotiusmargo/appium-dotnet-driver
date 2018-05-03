@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
     <metadata>
-        <id>WinAppDriver.Preview.Appium.WebDriver</id>
-        <version>0.0.0.1</version>
-        <title>Temporary Appium Webdriver for Microsoft Windows Application Driver actions preview</title>
+        <id>Microsoft.WinAppDriver.Appium.WebDriver</id>
+        <version>1.0.1-Preview</version>
+        <title>Temporary Appium WebDriver for Microsoft Windows Application Driver Preview</title>
         <authors>Microsoft</authors>
         <owners>Microsoft</owners>
         <licenseUrl>https://raw.githubusercontent.com/appium/appium-dotnet-driver/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/timotiusmargo/appium-dotnet-driver/tree/PointerInputDeviceExtension</projectUrl>
         <iconUrl>https://avatars1.githubusercontent.com/u/3221291?s=140</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>Temporary Selenium Webdriver extension for Appium that showcases additional actions support.</description>
+        <description>This is a temporary Selenium WebDriver extension for Appium that implements Actions API functionality for Windows Application Driver (WinAppDriver). This is for preview purposes only.</description>
         <releaseNotes>
-            Microsoft Actions Preview 0.0.0.1
+            Microsoft Actions 1.0.1-Preview
             [Enhancement] Enable support for W3C WebDriver Actions API
             [Enhancement] Add support for Pen and Touch specific extra parameters
         </releaseNotes>
