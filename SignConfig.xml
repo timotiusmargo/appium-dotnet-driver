@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+      signType indicates which certificates are used to sign the output
+      signType = "StrongName = 72 , Authenticode = 10006 , Both = 72 & 10006"
+-->
+<SignConfigXML>
+  <job platform="AnyCPU" configuration="Release" dest="$(TFS_OUTPUTDIRECTORY)\..\..\..\s\Signed" jobname="WinAppDriver Preview Appium WebDriver DaRT" approvers="gillesk;timargo">
+    <file src="__RELBINPATH__\..\..\..\s\appium-dotnet-driver\bin\Release\appium-dotnet-driver.dll" signType="Authenticode" dest="__RELBINPATH__\..\..\..\s\appium-dotnet-driver\bin\Release\Signed\appium-dotnet-driver.dll" />
+  </job>
+</SignConfigXML>
