@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+      signType indicates which certificates are used to sign the output
+      signType = "StrongName = 72 , Authenticode = 10006 , Both = 72 & 10006"
+-->
+<SignConfigXML>
+  <job platform="AnyCPU" configuration="Release" dest="$(TFS_OUTPUTDIRECTORY)\..\..\..\s\Signed" certSubject="NuGet" jobname="WinAppDriver Preview Appium WebDriver NugetSigning">
+    <file src="__RELBINPATH__\..\..\..\a\WinAppDriver.Preview.Appium.WebDriver.*.nupkg" signType="CP-401405" />
+  </job>
+</SignConfigXML>
